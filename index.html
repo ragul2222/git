@@ -1,45 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <title>Page 1</title>
+ <style>
+/* General body style */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    padding: 20px;
+}
+
+/* Heading */
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+/* Image */
+img {
+    display: block;
+    margin: 20px auto;
+    max-width: 300px;
+    border: 3px solid #555;
+    border-radius: 8px;
+}
+
+/* Form labels and radio buttons */
+form {
+    display: block;
+    width: fit-content;
+    margin: 20px auto;
+    text-align: center;
+}
+
+form label {
+    margin-right: 20px;
+    font-size: 18px;
+    text-align: center;
+    margin: 20px auto;
+}
+
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+/* Table */
+table {
+    width: 50%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background: #fff;
+}
+
+th, td {
+    padding: 10px;
+    text-align: center;
+    border: 1px solid #333;
+}
+
+thead {
+    background-color: #ddd;
+}
+
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+    </style>
 </head>
 <body>
-    <h1>Welcome</h1>
-    <!--image-->
-    <img src="1.jpg" alt="">
-    <!--form with input field -->
-    <form action="">
-        <label for="">
-            <input type="radio" name="gender" value="male">Male
-        </label>
-        <label for="">
-            <input type="radio" name="gender" value="female">Female
-        </label>
-    </form>
-    <!--form with input field -->
-    <table border="1">
-        <thead>
-            <tr>
-                <th rowspan="2">Sno</th>
-                <th rowspan="2">Name</th>
-                <th colspan="2">mark</th>
-            </tr>
-            <tr>
-                
-                <th>mark1</th>
-                <th>mark2</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td>A</td>
-                <td>80</td>
-                <td>90</td>
-            </tr>
-        </tbody>
-    </table>
+  <h1>Welcome - Page 1</h1>
+  <nav>
+    <a href="page2.html">Go to Page 2</a> |
+    <a href="page3.html">Go to Page 3</a> |
+    <a href="page4.html">Go to Page 4</a> |
+    <a href="page5.html">Go to Page 5</a>
+  </nav>
+
+  <!-- Your existing image, form, and table here -->
+  <img src="1.jpg" alt="Sample Image" />
+  <form>
+    <label><input type="radio" name="gender" value="male" /> Male</label>
+    <label><input type="radio" name="gender" value="female" /> Female</label>
+  </form>
+
+  <table border="1">
+    <thead>
+      <tr>
+        <th rowspan="2">Sno</th>
+        <th rowspan="2">Name</th>
+        <th colspan="2">Mark</th>
+      </tr>
+      <tr>
+        <th>Mark1</th>
+        <th>Mark2</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>A</td>
+        <td>80</td>
+        <td>90</td>
+      </tr>
+    </tbody>
+  </table>
+  <script>
+    
+  </script>
 </body>
 </html>

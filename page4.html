@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Page 4 - Layout from Image</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: grid;
+      grid-template-rows: 100px 1fr 80px;
+      grid-template-columns: 2fr 1fr 1fr;
+      grid-template-areas: 
+        "header header header"
+        "main empty sidebar"
+        "footer footer footer";
+      gap: 10px;
+    }
+
+    .box {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .header {
+      grid-area: header;
+      background: orange;
+    }
+
+    .main {
+      grid-area: main;
+      background: deepskyblue;
+    }
+
+    .empty {
+      grid-area: empty;
+      background: #fff;
+      border: 2px dashed #999;
+    }
+
+    .sidebar {
+      grid-area: sidebar;
+      background: lightcoral;
+    }
+
+    .footer {
+      grid-area: footer;
+      background: lightgreen;
+    }
+  </style>
+</head>
+<body>
+  <div class="box header">Header</div>
+  <div class="box main">Main</div>
+  <div class="box empty">Empty</div>
+  <div class="box sidebar">Sidebar</div>
+  <div class="box footer">Footer</div>
+</body>
+</html>
