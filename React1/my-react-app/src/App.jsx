@@ -203,15 +203,15 @@ function App() {
       <Navigation />
       <main style={{ padding: 'var(--spacing-8) 0' }}>
         <div className="container">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/services" element={<Services />} />
-            <Route path="/form" element={<Form />} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/services" element={<Services />} />
+        <Route path="/form" element={<Form />} />
             <Route path="/like-dislike" element={<LikeDislike />} />
             <Route path="/effect" element={<Effect />} />
             <Route path="/context" element={<ContextDemo />} />
-          </Routes>
+      </Routes>
         </div>
       </main>
     </div>

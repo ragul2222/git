@@ -6,15 +6,36 @@ const Form = () => {
     name: '',
     email: '',
     password: '',
+    age: ''
   });
 
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log('Form Submitted:', values);
-    setSubmitted(true);
-    resetForm();
+    setError('');
+    try {
+      const response = await fetch('http://localhost:3000/post', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          ...values,
+          age: values.age ? Number(values.age) : undefined
+        }),
+      });
+      if (response.ok) {
+        setSubmitted(true);
+        resetForm();
+      } else {
+        const errorData = await response.json();
+        setError(errorData.error || 'Unknown error');
+      }
+    } catch (error) {
+      setError('Network error: ' + error.message);
+    }
   };
 
   return (
@@ -134,6 +155,20 @@ const Form = () => {
             />
           </div>
 
+          <div className="form-group">
+            <label className="form-label">
+              Age
+            </label>
+            <input
+              type="number"
+              name="age"
+              value={values.age}
+              onChange={handleChange}
+              className="form-input"
+              placeholder="Enter your age"
+            />
+          </div>
+
           <button 
             type="submit" 
             className="btn btn-primary"
@@ -142,7 +177,19 @@ const Form = () => {
             Send Message
           </button>
         </form>
-
+        {error && (
+          <div style={{
+            marginTop: 'var(--spacing-6)',
+            padding: 'var(--spacing-4)',
+            backgroundColor: 'var(--error-color)',
+            color: 'var(--white)',
+            borderRadius: 'var(--radius-lg)',
+            textAlign: 'center',
+            fontWeight: '500'
+          }}>
+            ❌ {error}
+          </div>
+        )}
         {submitted && (
           <div style={{
             marginTop: 'var(--spacing-6)',

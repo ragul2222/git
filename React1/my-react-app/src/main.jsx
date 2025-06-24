@@ -11,7 +11,7 @@ createRoot(document.getElementById('root')).render(
     <BrowserRouter>
       <InfoProvider>
         <UserProvider>
-          <App />
+    <App />
         </UserProvider>
       </InfoProvider>
     </BrowserRouter>
