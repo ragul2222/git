@@ -1,7 +1,11 @@
 import express from 'express';
 import cors from 'cors';
+import dotenv from 'dotenv';
 import { connectDB } from './config/db.js';
 import User from './model/user.js';
+
+// Load environment variables
+dotenv.config();
 
 const app = express();
 
@@ -51,6 +55,8 @@ app.delete('/delete', (req, res) => {
   res.send('from delete');
 });
 
-app.listen(3000, () => {
-  console.log('Server running on port http://localhost:3000');
+const PORT = process.env.PORT || 3000;
+
+app.listen(PORT, () => {
+  console.log(`Server running on port http://localhost:${PORT}`);
 }); 
